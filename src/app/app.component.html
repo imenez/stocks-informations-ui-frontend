@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" style="color:white;">BIST Stocks</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarColor02">
+    <form class="form-inline my-2 my-lg-0">
+       <input type="search" (ngModelChange)="searchStocks(key.value)" #key="ngModel" ngModel
+        name="key" id="searchName" class="form-control mr-sm-2" placeholder="Search stocks..." required>
+    </form>
+  </div>
+</nav>
+
+<div class="container"><br/>
+  
+<table class="table table-bordered">
+  <thead>
+    <th>Stocks Code</th>
+    <th>Current Price</th>
+    <th>FK</th>
+    <th>PD/DD</th>
+    <th>Circulation Rate</th>
+    <th>Stocks Circulation Number</th>
+    <th>Last Period Profit</th>
+    <th>Trade Market</th>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let stocks of stocksDetails">
+      <td style="background-color:#FFF5F3">{{ stocks.stocksCode }}</td>
+      <td style="background-color:#D0F6CE">{{ stocks.currentStockPrice }}TL</td>
+      <td>{{ stocks.fkValue }}</td>
+      <td>{{ stocks.pdDDValue }}</td>
+      <td>{{ stocks.circulationRate }}</td>
+      <td>{{ stocks.circulationStocksNumber }}</td>
+      <td>{{ stocks.lastPeriodProfit }}</td>
+      <td>{{ stocks.tradeMarket }}</td>
+    </tr>
+  </tbody>
+
+</table>
+
+</div>
